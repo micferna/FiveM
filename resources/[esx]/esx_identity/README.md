@@ -1,55 +1,21 @@
-# esx_identity
+# Description
+[FR]
 
-## Requirements
-* Dependencies For Full Functionality
-  * [esx_skin](https://github.com/ESX-Org/esx_skin)
-  * [esx_policejob](https://github.com/ESX-Org/esx_policejob)
-  * [esx_society](https://github.com/ESX-Org/esx_society)
+Menu crée pour test la nouvelle version du RageUI le but n'étant pas de faire le meilleur menu possible, pas sûr de l'utiliser du coup je le partage.
+Standalone de base, à vous de modif le côté server selon la structure de vôtre BDD.
 
-## Download & Installation
+[EN]
 
-### Using [fvm](https://github.com/qlaffont/fvm-installer)
-```
-fvm install --save --folder=esx esx-org/esx_identity
-```
+I created this menu to try the new version of RageUI (v2). My goals wasn't to make the best menu possible but to make it a template everyone could use as I won't use it myself.
+This resource is standalone with it's only dependency being RageUI (obviously).
 
-### Using Git
-```
-cd resources
-git clone https://github.com/ESX-Org/esx_identity [esx]/esx_identity
-```
+## Commandes/Commands
+- Ouvrir/Open: 'iden'
+- Fermer/Close: 'deliden'
 
-### Manually
-- Download https://github.com/ESX-Org/esx_identity/archive/master.zip
-- Put it in the `[esx]` directory
+# Update
+- Added ESX database server version for those who asked
 
-## Installation
-- Import `esx_identity.sql` in your database
-- Add this to your `server.cfg`:
-
-```
-start esx_identity
-```
-
-- If you are using esx_policejob or esx_society, you need to enable the following in the scripts' `config.lua`:
-```Config.EnableESXIdentity          = true```
-
-### Commands
-```
-/register
-/charlist
-/charselect
-/chardel
-```
-
-# Legal
-### License
-esx_identity - rp characters
-
-Copyright (C) 2015-2018 Jérémie N'gadi
-
-This program Is free software: you can redistribute it And/Or modify it under the terms Of the GNU General Public License As published by the Free Software Foundation, either version 3 Of the License, Or (at your option) any later version.
-
-This program Is distributed In the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty Of MERCHANTABILITY Or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License For more details.
-
-You should have received a copy Of the GNU General Public License along with this program. If Not, see http://www.gnu.org/licenses/.
+## Dependency
+[RageUI v2](https://github.com/iTexZoz/RageUI)
+- Créateur officiel : [Dylan Malandrin](https://github.com/iTexZoz)
