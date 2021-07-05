@@ -5,6 +5,16 @@
 
 
 
-Remplacer ```server.cfg.exemple.txt par server.cfg```
+### Recuperer le runtime FiveM
+https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/
 
+### Remplacer 
+```
+server.cfg.exemple.txt par server.cfg
+```
+
+### Puis pour le start 
+```
+bash ~/server_runtime/run.sh +exec server.cfg
+```
 
