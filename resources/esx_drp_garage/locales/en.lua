@@ -1,0 +1,25 @@
+Locales['en'] = {
+    ['you_paid'] = 'Vous avez payé ~g~€%s~s~',
+    ['garage'] = 'Garage',
+    ['notif_car_impounded'] = 'Garage: <br /> Votre voiture a été mise en fourrière !',
+    ['status_in_garage'] = '%s: <font color="green">Dans le garage</font>',
+    ['status_impounded'] = '%s: <font color="red">Mise en fourrière</font>',
+    ['list_vehicles'] = 'Liste des véhicules',
+    ['stock_vehicle'] = 'Stocker le véhicule',
+    ['return_vehicle'] = 'Retourner la voiture de la fourrière ($%s)',
+    ['reparation'] = 'Votre voiture est endommagée !',
+    ['reparation_yes'] = 'Réparer ici ($%s)',
+    ['reparation_no'] = 'Non, merci !',
+    ['reparation_no_notif'] = 'Pour être stocké, le véhicule doit être en parfait état.',
+    ['ranger'] = 'Garage: <br /> Votre voiture a été rangée dans le garage !',
+    ['stockv_not_owned'] = 'Garage: <br /> Ce véhicule n\'est pas le vôtre !',
+    ['stockv_not_in_veh'] = 'Garage: <br /> Vous devez être dans un véhicule pour le stocker !',
+    ['spawn'] = 'Appuyez sur ~INPUT_PICKUP~ pour sortir un véhicule',
+    ['delete'] = 'Appuyez sur  ~INPUT_PICKUP~ pour stocker un véhicule',
+    ['pound_action_menu'] = 'Appuyez sur ~INPUT_PICKUP~ pour entrer dans la cour de la fourrière',
+    ['not_enough_money'] = 'Vous n\'avez pas assez d\'argent',
+    ['impound_list'] = '%s: Retourner à',
+    ['impound_yard'] = 'Cour de fourrière',
+    ['impound_not_enough_money'] = 'Garage: <br /> Vous n\'avez pas assez d\'argent'
+
+}

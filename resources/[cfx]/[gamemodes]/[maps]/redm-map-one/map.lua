@@ -1,2 +1,2 @@
-spawnpoint 'player_three' { x = -262.849, y = 793.404, z = 118.087 }
-spawnpoint 'player_zero' { x = -262.849, y = 793.404, z = 118.087 }
+spawnpoint 'player_three' { x = 228.6881, y = -882.7147, z = 30.4921 }
+spawnpoint 'player_zero' { x = 228.6881, y = -882.7147, z = 30.4921 }
