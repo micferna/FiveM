@@ -108,6 +108,24 @@ CREATE TABLE `datastore_data` (
 INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 (1,	'society_police',	NULL,	'{}');
 
+DROP TABLE IF EXISTS `dpkeybinds`;
+CREATE TABLE `dpkeybinds` (
+  `id` varchar(50) DEFAULT NULL,
+  `keybind1` varchar(50) DEFAULT 'num4',
+  `emote1` varchar(255) DEFAULT '',
+  `keybind2` varchar(50) DEFAULT 'num5',
+  `emote2` varchar(255) DEFAULT '',
+  `keybind3` varchar(50) DEFAULT 'num6',
+  `emote3` varchar(255) DEFAULT '',
+  `keybind4` varchar(50) DEFAULT 'num7',
+  `emote4` varchar(255) DEFAULT '',
+  `keybind5` varchar(50) DEFAULT 'num8',
+  `emote5` varchar(255) DEFAULT '',
+  `keybind6` varchar(50) DEFAULT 'num9',
+  `emote6` varchar(255) DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 DROP TABLE IF EXISTS `fine_types`;
 CREATE TABLE `fine_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -208,20 +226,21 @@ DROP TABLE IF EXISTS `jobs`;
 CREATE TABLE `jobs` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) DEFAULT NULL,
+  `whitelisted` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `jobs` (`name`, `label`) VALUES
-('cardealer',	'Concessionnaire'),
-('fisherman',	'Pêcheur'),
-('fueler',	'Raffineur'),
-('lumberjack',	'Bûcheron'),
-('miner',	'Mineur'),
-('police',	'LSPD'),
-('reporter',	'Journaliste'),
-('slaughterer',	'Abatteur'),
-('tailor',	'Couturier'),
-('unemployed',	'Unemployed');
+INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
+('cardealer',	'Concessionnaire',	0),
+('fisherman',	'Pêcheur',	0),
+('fueler',	'Raffineur',	0),
+('lumberjack',	'Bûcheron',	0),
+('miner',	'Mineur',	0),
+('police',	'LSPD',	0),
+('reporter',	'Journaliste',	0),
+('slaughterer',	'Abatteur',	0),
+('tailor',	'Couturier',	0),
+('unemployed',	'Unemployed',	0);
 
 DROP TABLE IF EXISTS `job_grades`;
 CREATE TABLE `job_grades` (
@@ -266,6 +285,7 @@ CREATE TABLE `licenses` (
 DROP TABLE IF EXISTS `owned_vehicles`;
 CREATE TABLE `owned_vehicles` (
   `owner` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` tinyint(1) NOT NULL DEFAULT 0,
   `plate` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
   `vehicle` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'car',
@@ -314,6 +334,7 @@ CREATE TABLE `users` (
   `sex` varchar(1) DEFAULT NULL,
   `height` int(11) DEFAULT NULL,
   `status` longtext DEFAULT NULL,
+  `phone_number` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -337,9 +358,29 @@ CREATE TABLE `vehicles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
-('AudiA4TFSIQuattro2017',	'audia4',	900000,	'audi'),
-('Audi90QuatroIMSAGTO',	'imsa90',	750000,	'audi'),
-('Audi_C7_RS6',	'rs6',	750000,	'audi');
+('AudiS3',	'2015s3',	1000,	'audi'),
+('AudiA62015',	'a615',	1000,	'audi'),
+('AudiA7',	'a7',	1000,	'audi'),
+('AudiA8FSI',	'a8fsi',	1000,	'audi'),
+('AudiSportQuattro',	'asportquattro',	1000,	'audi'),
+('AudiA4TFSIQuattro2017',	'audia4',	90,	'audi'),
+('AudiS4',	'b5s4',	1000,	'audi'),
+('PaganiHuayraBC',	'bc',	1000,	'pagani'),
+('AudiRS62003',	'c5rs6',	1000,	'audi'),
+('McLarenF1',	'f1',	1000,	'mclaren'),
+('Audi90QuatroIMSAGTO',	'imsa90',	750,	'audi'),
+('PaganiZondaR',	'ktkzr',	1000,	'pagani'),
+('MacLarenP1',	'p1',	1000,	'mclaren'),
+('MacLarenP1GTR',	'p1gtr',	1000,	'mclaren'),
+('AudiR8',	'r8ppi',	1000,	'audi'),
+('AudiRS3SB2018',	'rs318',	1000,	'audi'),
+('AudiRS4Avant',	'rs4avant',	1000,	'audi'),
+('AudiRS52011',	'rs5',	1000,	'audi'),
+('Audi_C7_RS6',	'rs6',	750,	'audi'),
+('AudiRS7',	'rs7',	1000,	'audi'),
+('AudiSQ7',	'sq72016',	1000,	'audi'),
+('PaganiZondaTricolore',	'tricolore',	1000,	'pagani'),
+('audittrs',	'ttrs',	1000,	'audi');
 
 DROP TABLE IF EXISTS `vehicle_categories`;
 CREATE TABLE `vehicle_categories` (
@@ -350,7 +391,8 @@ CREATE TABLE `vehicle_categories` (
 
 INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 ('audi',	'Audi'),
-('coupes',	'Coupés');
+('mclaren',	'McLaren'),
+('pagani',	'Pagani');
 
 DROP TABLE IF EXISTS `vehicle_sold`;
 CREATE TABLE `vehicle_sold` (
@@ -363,4 +405,4 @@ CREATE TABLE `vehicle_sold` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
--- 2021-07-04 16:11:57
+-- 2021-07-16 19:48:12
